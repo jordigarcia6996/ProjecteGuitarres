@@ -30,6 +30,8 @@ public class Guitarres {
         boolean esElectrica = false; // És elèctrica. Sinò ho és, serà classica.
         int cordes = 0; // Cordes
         char series = ' '; // Series
+        
+        boolean omplit = false;
 
         //========================= Variable del menú =======================
        
@@ -49,6 +51,25 @@ public class Guitarres {
 
             switch (opcio = s.nextInt()) {
                 case 1:
+                    
+                    System.out.println("Introdueix el nom del fabricant:");
+                    fabricant=s.nextLine();
+                    
+                    System.out.println("Introdueix el model:");
+                    model=s.nextLine();
+                    
+                    System.out.println("Introdueix el preu:");
+                    preu=s.nextDouble();
+                    
+                    System.out.println("Introdueix l'any de fabricació:");
+                    anyFabricacio=s.nextInt();
+                    
+                    System.out.println("Introdeuix el pais de fabricació:");
+                    paisFabricacio=s.nextLine();
+                    
+                    System.out.println("Quin tipus de guitarra és:");
+                    
+                    esElectrica=s.nextBoolean();
 
                     break;
 
