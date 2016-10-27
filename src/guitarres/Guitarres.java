@@ -52,11 +52,16 @@ public class Guitarres {
             switch (opcio = s.nextInt()) {
                 case 1:
                     
-                    System.out.println("Introdueix el nom del fabricant:");
-                    fabricant=s.nextLine();
+                    if (omplit){
+                        
+                    }else{
+                    System.out.println("\nIntrodueix el nom del fabricant:");
+                    fabricant=s.next();
+                    
+                    System.out.println("\nEl fabricant introduït és "+fabricant+".\n");
                     
                     System.out.println("Introdueix el model:");
-                    model=s.nextLine();
+                    model=s.next();
                     
                     System.out.println("Introdueix el preu:");
                     preu=s.nextDouble();
@@ -65,11 +70,79 @@ public class Guitarres {
                     anyFabricacio=s.nextInt();
                     
                     System.out.println("Introdeuix el pais de fabricació:");
-                    paisFabricacio=s.nextLine();
+                    paisFabricacio=s.next();
                     
-                    System.out.println("Quin tipus de guitarra és:");
                     
-                    esElectrica=s.nextBoolean();
+                    
+                    char e = 'A';
+                    
+                    do {
+                        
+                        System.out.println("Quin tipus de guitarra és (E o C):");
+                        switch (e=s.next().toUpperCase().charAt(0)) {
+                            case 'E':
+                                                            
+                                esElectrica=true;
+                                
+                                break;
+                                
+                            case 'C':
+                            
+                                
+                                esElectrica=false;
+                                
+                                break;
+                                
+                            default:
+                                
+                                System.out.println("Opció no valida!!");
+                                
+                        }
+                        
+                    }while( e!='E' && e!='C');
+                    
+                    
+                   
+                    System.out.println("Quantes cordes té: ");
+                    cordes=s.nextInt();
+                     
+                    do{
+                    System.out.println("De quina serie és (A, E, I, O, U):");
+                        switch (series=s.next().charAt(0)) {
+                            case 'A':
+                            case 'E':
+                            case 'I':
+                            case 'O':
+                            case 'U':
+                            case 'a':
+                            case 'e':
+                            case 'i':
+                            case 'o':
+                            case 'u':
+                                
+                                System.out.println("Serie "+series+" introduïda"
+                                        + " correctament.");
+                            
+                                
+                                break;
+                            
+                            default:
+                                
+                                System.out.println("Opció no valida");
+                        }
+                        
+                    }while(series!='A' || series!='a' || series!='E' || series!='e' 
+                            || series!='I' || series!='i' || series!='O' || series!='o' 
+                            || series!='U' || series!='u');
+   
+                        
+                        
+                    omplit=true;
+                    if (omplit){
+                        System.out.println("L'element ja stà plé, si vols omplr un altre,"
+                                + " has de borrar este.");
+                    }
+                    }
 
                     break;
 
