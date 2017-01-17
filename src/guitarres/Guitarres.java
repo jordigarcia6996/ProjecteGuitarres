@@ -52,7 +52,7 @@ public class Guitarres {
 
                     if (omplit) {
 
-                        System.out.println("\nL'element ja stà plé, si vols omplr un altre,"
+                        System.out.println("\nL'element ja stà plé, si vols omplir un altre,"
                                 + " has de borrar este.");
 
                     } else {
