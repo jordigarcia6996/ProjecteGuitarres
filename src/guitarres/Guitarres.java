@@ -13,6 +13,9 @@ import java.util.Scanner;
  */
 public class Guitarres {
 
+    private static final int MAXGUITARRES = 2;
+    private static Guitarra[] arrayGuitarra=new Guitarra[MAXGUITARRES];
+
     /**
      * @param args the command line arguments
      */
@@ -20,7 +23,16 @@ public class Guitarres {
 
         Scanner s = new Scanner(System.in);
 
-        //======================= Variables dels objectes ==================
+              
+        for (int i = 0; i < arrayGuitarra.length; i++) {
+            arrayGuitarra[i]=new Guitarra();
+            arrayGuitarra[i].setOmplit(false);
+            
+        }
+        
+       
+
+       //Propietats      
         String fabricant = null; // Fabricant
         String model = null; // Modèl
         double preu = 0.0; // Preu
@@ -43,7 +55,7 @@ public class Guitarres {
             System.out.println("Opció 2: Eliminar guitarra.");
             System.out.println("Opció 3: Modificar guitarra.");
             System.out.println("Opció 4: Llistar guitarres.");
-            System.out.println("Opció 5: Surtir de l'aplicació.\n");
+            System.out.println("Opció 5: Sortir de l'aplicació.\n");
 
             System.out.println("Escriu una opció:");
 
@@ -295,12 +307,12 @@ public class Guitarres {
                                 System.out.println("Vols canviar el tipus de guitarra(S/N)");
                                 switch (segur = s.next().toUpperCase().charAt(0)) {
                                     case 'S':
-                                       esElectrica=!esElectrica;
-                                       if (e=='C'){
-                                           e='E';
-                                       }else{
-                                           e='C';
-                                       }
+                                        esElectrica = !esElectrica;
+                                        if (e == 'C') {
+                                            e = 'E';
+                                        } else {
+                                            e = 'C';
+                                        }
                                         break;
                                     default:
 
