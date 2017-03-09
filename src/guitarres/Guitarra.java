@@ -25,7 +25,9 @@ public class Guitarra {
 
     @Override
     public String toString() {
-        return "Guitarra{" + "fabricant=" + fabricant + ", \nmodel=" + model + ", \npreu=" + preu + ", \nanyFabricacio=" + anyFabricacio + ", \npaisFabricacio=" + paisFabricacio + ", \nesElectrica=" + esElectrica + ", \ncordes=" + cordes + ", \nseries=" + series + '}';
+        
+        System.out.println("");
+        return "Fabricant = " + fabricant + ", \nModel = " + model + ", \nPreu = " + preu + ", \nAny de fabricacio = " + anyFabricacio + ", \nPaís de fabricacio = " + paisFabricacio + ", \nÉs elèctrica = " + esElectrica + ", \nCordes = " + cordes + ", \nSerie = " + series + '\n';
     }
 
    
