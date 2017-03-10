@@ -68,6 +68,9 @@ public class Guitarres {
                 llistarPilots();
                 break;
             case 5:
+                recuperarGuitarra();
+                break;
+            case 6:
                 sortirAplicacio();
                 break;
             default:
@@ -78,7 +81,7 @@ public class Guitarres {
     }
 
     public static boolean opcioFinal() {
-        return opcio == 5;
+        return opcio == 6;
     }
 
     public static void main(String[] args) {
@@ -377,6 +380,37 @@ public class Guitarres {
         }
 
         System.out.println("");
+
+    }
+
+    public static void recuperarGuitarra() {
+        Scanner s = new Scanner(System.in);
+
+        char resposta = 'N';
+        int compt = 0, i;
+        for (i = 0; i < arrayGuitarra.length && resposta != 'S' && resposta != 'F'; i++) {
+            if (!arrayGuitarra[i].isOmplit()) {
+                System.out.format("\nGuitarra %d:\n", ++compt);
+                System.out.println(arrayGuitarra[i].toString());
+                do {
+                    System.out.println("\nVols recuperar la guitarra(S o N) o finalitzar la cerca (F)?:");
+                    resposta = s.skip("[\r\n]*").nextLine().toUpperCase().charAt(0);
+
+                } while (resposta != 'S' && resposta != 'N' && resposta != 'F');
+            }
+            if (resposta == 'S') {
+                break;
+            }
+        }
+
+        if (resposta == 'S') {
+            arrayGuitarra[i].setOmplit(true);
+            System.out.println("Pilot recuperat correctament.");
+        } else if (compt == 0) {
+            System.out.println("No hi ha pilots per recuperat.");
+        } else {
+            System.out.println("Pilot no recuperat.");
+        }
 
     }
 
